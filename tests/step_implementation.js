@@ -15,7 +15,7 @@ step("Goto Google's search page", async function () {
 });
 
 step("Search for <query>", async function (query) {
-  var input = Selector('#lst-ib').with({ boundTestRun: _ });
+  var input = Selector('input[title="Search"]').with({ boundTestRun: _ });
   await _.typeText(input, query);
   await _.pressKey("enter");
 });
