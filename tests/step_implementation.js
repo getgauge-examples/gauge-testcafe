@@ -6,7 +6,7 @@ var Selector = require('testcafe').Selector;
 
 var _;
 
-beforeSpec(async function() {
+beforeScenario(async function() {
   _ = await testControllerHolder.get();
 })
 

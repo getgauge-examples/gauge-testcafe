@@ -14,7 +14,7 @@ function createTestFile () {
 function runTest () {
   var runner = null;
 
-  createTestCafe('localhost', 1337, 1338)
+  createTestCafe()
       .then(function (tc) {
           testcafe = tc;
           runner   = tc.createRunner();
@@ -32,12 +32,12 @@ function runTest () {
       });
 }
 
-beforeSuite(function(){
+beforeScenario(function(){
   createTestFile();
   runTest();
 });
 
-afterSuite(function(){
+afterScenario(function(){
   testControllerHolder.free();
   fs.unlinkSync('test.js');
-})
+});
